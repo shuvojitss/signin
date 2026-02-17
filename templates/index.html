@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Glass Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+
+<body class="min-h-screen flex items-center justify-center">
+
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
+    </div>
+
+    <!-- Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Main Card -->
+    <div class="glass-card rounded-2xl p-8 w-full max-w-md mx-4 relative overflow-hidden">
+        <!-- Decorative line at top -->
+        <div
+            class="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent rounded-full">
+        </div>
+
+        {% if error %}
+        <div class="bg-red-500/20 border border-red-500/50 text-red-300 px-4 py-3 rounded-lg mb-4 text-sm">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div
+            class="{% if category == 'error' %}bg-red-500/20 border-red-500/50 text-red-300{% else %}bg-green-500/20 border-green-500/50 text-green-300{% endif %} border px-4 py-3 rounded-lg mb-4 text-sm">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <h1 class="text-3xl font-bold text-white text-center mb-8 tracking-wide" id="formTitle">{% if mode == 'signup'
+            %}Sign Up{% else %}Login{% endif %}</h1>
+
+        <form id="loginForm" class="space-y-6" method="POST"
+            action="{% if mode == 'signup' %}/signup{% else %}/login{% endif %}">
+            <!-- Name Input (Sign Up only) -->
+            <div class="input-group" id="nameGroup"
+                style="{% if mode != 'signup' %}display:none; max-height:0; opacity:0; overflow:hidden;{% endif %} transition: max-height 0.4s ease, opacity 0.4s ease, margin 0.4s ease;">
+                <input type="text" id="fullname" name="fullname" class="input-field" placeholder=" " {% if
+                    mode=='signup' %}required{% endif %}>
+                <label for="fullname" class="input-label">Full Name</label>
+                <i data-lucide="user" class="input-icon w-5 h-5"></i>
+                <div class="error-message text-red-400 text-xs mt-1 hidden"></div>
+            </div>
+
+            <!-- Username Input -->
+            <div class="input-group">
+                <input type="text" id="username" name="username" class="input-field" placeholder=" " required>
+                <label for="username" class="input-label">Username</label>
+                <i data-lucide="mail" class="input-icon w-5 h-5"></i>
+                <div class="error-message text-red-400 text-xs mt-1 hidden"></div>
+            </div>
+
+            <!-- Password Input -->
+            <div class="input-group">
+                <input type="password" id="password" name="password" class="input-field" placeholder=" " required>
+                <label for="password" class="input-label">Password</label>
+                <i data-lucide="lock" class="input-icon w-5 h-5"></i>
+                <i data-lucide="eye" class="password-toggle w-5 h-5" id="togglePassword"></i>
+                <div class="error-message text-red-400 text-xs mt-1 hidden"></div>
+            </div>
+
+            <!-- Confirm Password Input (Sign Up only) -->
+            <div class="input-group" id="confirmPasswordGroup"
+                style="{% if mode != 'signup' %}display:none; max-height:0; opacity:0; overflow:hidden;{% endif %} transition: max-height 0.4s ease, opacity 0.4s ease, margin 0.4s ease;">
+                <input type="password" id="confirmPassword" class="input-field" placeholder=" " {% if mode=='signup'
+                    %}required{% endif %}>
+                <label for="confirmPassword" class="input-label">Confirm Password</label>
+                <i data-lucide="lock" class="input-icon w-5 h-5"></i>
+                <div class="error-message text-red-400 text-xs mt-1 hidden"></div>
+            </div>
+
+            <!-- Remember Me & Forgot Password (Login only) -->
+            <div class="flex items-center justify-between text-sm" id="rememberForgot"
+                style="{% if mode == 'signup' %}display:none; max-height:0; opacity:0; overflow:hidden;{% endif %} transition: max-height 0.4s ease, opacity 0.4s ease, margin 0.4s ease;">
+                <label class="flex items-center space-x-2 cursor-pointer group">
+                    <input type="checkbox" class="custom-checkbox" id="rememberMe">
+                    <span class="text-gray-300 group-hover:text-white transition-colors">Remember me</span>
+                </label>
+                <a href="#" class="link-hover">Forgot Password?</a>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="login-btn w-full text-lg" id="loginBtn">
+                <span id="btnText">{% if mode == 'signup' %}Create Account{% else %}Login{% endif %}</span>
+            </button>
+
+            <!-- Divider -->
+            <div class="flex items-center gap-3 my-2">
+                <div class="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                <span class="text-xs text-gray-500 uppercase tracking-widest">or continue with</span>
+                <div class="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+            </div>
+
+            <!-- Social Login Buttons -->
+            <div class="flex gap-4">
+                <!-- Google Button -->
+                <a href="/auth/google"
+                    class="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl border border-white/10 bg-white/5 text-white text-sm font-medium transition-all duration-300 hover:bg-white/10 hover:border-cyan-400/40 hover:shadow-[0_0_20px_rgba(0,210,255,0.15)] cursor-pointer group"
+                    id="googleBtn">
+                    <svg class="w-5 h-5 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"
+                            fill="#4285F4" />
+                        <path
+                            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                            fill="#34A853" />
+                        <path
+                            d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                            fill="#FBBC05" />
+                        <path
+                            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                            fill="#EA4335" />
+                    </svg>
+                    Google
+                </a>
+
+                <!-- GitHub Button -->
+                <a href="/auth/github"
+                    class="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl border border-white/10 bg-white/5 text-white text-sm font-medium transition-all duration-300 hover:bg-white/10 hover:border-cyan-400/40 hover:shadow-[0_0_20px_rgba(0,210,255,0.15)] cursor-pointer group"
+                    id="githubBtn">
+                    <svg class="w-5 h-5 fill-white transition-transform duration-300 group-hover:scale-110"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+
+            <!-- Toggle Link -->
+            <div class="text-center text-sm text-gray-400" id="toggleContainer">
+                {% if mode == 'signup' %}
+                <span id="toggleText">Already have an account?</span>
+                <a href="/login" class="link-hover font-medium text-white" id="toggleLink">Login</a>
+                {% else %}
+                <span id="toggleText">Don't have an account?</span>
+                <a href="/signup" class="link-hover font-medium text-white" id="toggleLink">Register</a>
+                {% endif %}
+            </div>
+        </form>
+
+        <!-- Success Checkmark (Hidden by default) -->
+        <div class="success-checkmark" id="successCheckmark">
+            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none" />
+                <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+            </svg>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // ===== State from Server =====
+        let isSignUp = {% if mode == 'signup' %}true{% else %} false{% endif %};
+
+        // Generate Particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            particlesContainer.appendChild(particle);
+        }
+
+        // Password Toggle
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+
+        togglePassword.addEventListener('click', function () {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+
+            // Change icon
+            if (type === 'text') {
+                togglePassword.setAttribute('data-lucide', 'eye-off');
+            } else {
+                togglePassword.setAttribute('data-lucide', 'eye');
+            }
+            lucide.createIcons();
+        });
+
+        // Form Handling with actual submission
+        const loginForm = document.getElementById('loginForm');
+        const loginBtn = document.getElementById('loginBtn');
+        const btnText = document.getElementById('btnText');
+
+        // Input Validation
+        const usernameInput = document.getElementById('username');
+        const fullnameInput = document.getElementById('fullname');
+        const confirmPasswordInput = document.getElementById('confirmPassword');
+
+        function showError(input, message) {
+            const errorDiv = input.parentElement.querySelector('.error-message');
+            errorDiv.textContent = message;
+            errorDiv.classList.remove('hidden');
+            input.style.borderBottomColor = '#ff006e';
+
+            // Add shake animation
+            input.parentElement.classList.add('shake');
+            setTimeout(() => {
+                input.parentElement.classList.remove('shake');
+            }, 500);
+        }
+
+        function clearError(input) {
+            const errorDiv = input.parentElement.querySelector('.error-message');
+            errorDiv.classList.add('hidden');
+            input.style.borderBottomColor = '';
+        }
+
+        usernameInput.addEventListener('input', () => {
+            if (usernameInput.value.length < 3 && usernameInput.value !== '') {
+                showError(usernameInput, 'Username must be at least 3 characters');
+            } else {
+                clearError(usernameInput);
+            }
+        });
+
+        passwordInput.addEventListener('input', () => {
+            if (passwordInput.value.length < 6 && passwordInput.value !== '') {
+                showError(passwordInput, 'Password must be at least 6 characters');
+            } else {
+                clearError(passwordInput);
+            }
+        });
+
+        // Form Submission with validation
+        loginForm.addEventListener('submit', (e) => {
+            let hasError = false;
+
+            // Validate Name (sign-up only)
+            if (isSignUp && fullnameInput && fullnameInput.value.trim().length < 2) {
+                showError(fullnameInput, 'Please enter your full name');
+                hasError = true;
+            }
+
+            // Validate Username
+            if (usernameInput.value.length < 3) {
+                showError(usernameInput, 'Username must be at least 3 characters');
+                hasError = true;
+            }
+
+            // Validate Password
+            if (passwordInput.value.length < 6) {
+                showError(passwordInput, 'Password must be at least 6 characters');
+                hasError = true;
+            }
+
+            // Validate Confirm Password (sign-up only)
+            if (isSignUp && confirmPasswordInput && confirmPasswordInput.value !== passwordInput.value) {
+                showError(confirmPasswordInput, 'Passwords do not match');
+                hasError = true;
+            }
+
+            if (hasError) {
+                e.preventDefault();
+                return;
+            }
+
+            // Show loading state
+            loginBtn.classList.add('loading');
+            btnText.textContent = '';
+        });
+
+        // Add floating particles on mouse move
+        document.addEventListener('mousemove', (e) => {
+            if (Math.random() > 0.95) {
+                createParticle(e.clientX, e.clientY);
+            }
+        });
+
+        function createParticle(x, y) {
+            const particle = document.createElement('div');
+            particle.style.position = 'fixed';
+            particle.style.left = x + 'px';
+            particle.style.top = y + 'px';
+            particle.style.width = '4px';
+            particle.style.height = '4px';
+            particle.style.background = 'rgba(0, 210, 255, 0.8)';
+            particle.style.borderRadius = '50%';
+            particle.style.pointerEvents = 'none';
+            particle.style.zIndex = '9999';
+            particle.style.boxShadow = '0 0 10px rgba(0, 210, 255, 0.8)';
+            document.body.appendChild(particle);
+
+            const angle = Math.random() * Math.PI * 2;
+            const velocity = Math.random() * 100 + 50;
+            const lifetime = Math.random() * 1000 + 500;
+
+            let opacity = 1;
+            let currentX = x;
+            let currentY = y;
+
+            const startTime = Date.now();
+
+            function animate() {
+                const elapsed = Date.now() - startTime;
+                const progress = elapsed / lifetime;
+
+                if (progress < 1) {
+                    currentX += Math.cos(angle) * velocity * 0.02;
+                    currentY += Math.sin(angle) * velocity * 0.02;
+                    opacity = 1 - progress;
+
+                    particle.style.left = currentX + 'px';
+                    particle.style.top = currentY + 'px';
+                    particle.style.opacity = opacity;
+
+                    requestAnimationFrame(animate);
+                } else {
+                    particle.remove();
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        // Add ripple effect on click
+        document.addEventListener('click', (e) => {
+            const ripple = document.createElement('div');
+            ripple.style.position = 'fixed';
+            ripple.style.left = e.clientX + 'px';
+            ripple.style.top = e.clientY + 'px';
+            ripple.style.width = '0px';
+            ripple.style.height = '0px';
+            ripple.style.border = '2px solid rgba(0, 210, 255, 0.5)';
+            ripple.style.borderRadius = '50%';
+            ripple.style.transform = 'translate(-50%, -50%)';
+            ripple.style.pointerEvents = 'none';
+            ripple.style.zIndex = '9999';
+            document.body.appendChild(ripple);
+
+            let size = 0;
+            let opacity = 1;
+
+            function animateRipple() {
+                size += 5;
+                opacity -= 0.02;
+
+                ripple.style.width = size + 'px';
+                ripple.style.height = size + 'px';
+                ripple.style.opacity = opacity;
+
+                if (opacity > 0) {
+                    requestAnimationFrame(animateRipple);
+                } else {
+                    ripple.remove();
+                }
+            }
+
+            requestAnimationFrame(animateRipple);
+        });
+    </script>
+</body>
+
+</html>

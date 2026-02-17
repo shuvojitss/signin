@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Performance optimizations */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* GPU acceleration for animations */
+.gpu-accelerate {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Smooth transitions for all interactive elements */
+a,
+button {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Fade-in animation for sections */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger animation delay */
+.stagger-1 {
+    transition-delay: 0.1s;
+}
+
+.stagger-2 {
+    transition-delay: 0.2s;
+}
+
+.stagger-3 {
+    transition-delay: 0.3s;
+}
+
+.stagger-4 {
+    transition-delay: 0.4s;
+}
+
+/* Smooth hover effects */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar smooth transitions */
+header {
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+header.scrolled {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Smooth mobile menu animation */
+#mobileMenu {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform-origin: top;
+}
+
+#mobileMenu.hidden {
+    opacity: 0;
+    transform: scaleY(0);
+    pointer-events: none;
+}
+
+#mobileMenu:not(.hidden) {
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+/* Active nav link indicator */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===== Hero Button Styles ===== */
+.button {
+    cursor: pointer;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.25s ease;
+    background: radial-gradient(65.28% 65.28% at 50% 100%,
+            rgba(34, 211, 238, 0.8) 0%,
+            rgba(34, 211, 238, 0) 100%),
+        linear-gradient(0deg, #2563eb, #2563eb);
+    border-radius: 0.75rem;
+    border: none;
+    outline: none;
+    padding: 12px 18px;
+    min-height: 48px;
+    min-width: 102px;
+}
+
+.button::before,
+.button::after {
+    content: "";
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+    z-index: 0;
+}
+
+.button::before {
+    inset: 1px;
+    background: linear-gradient(177.95deg,
+            rgba(255, 255, 255, 0.19) 0%,
+            rgba(255, 255, 255, 0) 100%);
+    border-radius: calc(0.75rem - 1px);
+}
+
+.button::after {
+    inset: 2px;
+    background: radial-gradient(65.28% 65.28% at 50% 100%,
+            rgba(34, 211, 238, 0.8) 0%,
+            rgba(34, 211, 238, 0) 100%),
+        linear-gradient(0deg, #2563eb, #2563eb);
+    border-radius: calc(0.75rem - 2px);
+}
+
+.button:active {
+    transform: scale(0.95);
+}
+
+.points_wrapper {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.points_wrapper .point {
+    bottom: -10px;
+    position: absolute;
+    animation: floating-points infinite ease-in-out;
+    pointer-events: none;
+    width: 2px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 9999px;
+}
+
+@keyframes floating-points {
+    0% {
+        transform: translateY(0);
+    }
+
+    85% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(-55px);
+        opacity: 0;
+    }
+}
+
+.points_wrapper .point:nth-child(1) {
+    left: 10%;
+    opacity: 1;
+    animation-duration: 2.35s;
+    animation-delay: 0.2s;
+}
+
+.points_wrapper .point:nth-child(2) {
+    left: 30%;
+    opacity: 0.7;
+    animation-duration: 2.5s;
+    animation-delay: 0.5s;
+}
+
+.points_wrapper .point:nth-child(3) {
+    left: 25%;
+    opacity: 0.8;
+    animation-duration: 2.2s;
+    animation-delay: 0.1s;
+}
+
+.points_wrapper .point:nth-child(4) {
+    left: 44%;
+    opacity: 0.6;
+    animation-duration: 2.05s;
+}
+
+.points_wrapper .point:nth-child(5) {
+    left: 50%;
+    opacity: 1;
+    animation-duration: 1.9s;
+}
+
+.points_wrapper .point:nth-child(6) {
+    left: 75%;
+    opacity: 0.5;
+    animation-duration: 1.5s;
+    animation-delay: 1.5s;
+}
+
+.points_wrapper .point:nth-child(7) {
+    left: 88%;
+    opacity: 0.9;
+    animation-duration: 2.2s;
+    animation-delay: 0.2s;
+}
+
+.points_wrapper .point:nth-child(8) {
+    left: 58%;
+    opacity: 0.8;
+    animation-duration: 2.25s;
+    animation-delay: 0.2s;
+}
+
+.points_wrapper .point:nth-child(9) {
+    left: 98%;
+    opacity: 0.6;
+    animation-duration: 2.6s;
+    animation-delay: 0.1s;
+}
+
+.points_wrapper .point:nth-child(10) {
+    left: 65%;
+    opacity: 1;
+    animation-duration: 2.5s;
+    animation-delay: 0.2s;
+}
+
+.inner {
+    z-index: 2;
+    gap: 6px;
+    position: relative;
+    width: 100%;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    transition: color 0.2s ease-in-out;
+}
+
+.inner svg.icon {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+    stroke: white;
+    fill: none;
+}
+
+.button:hover svg.icon {
+    transform: translateX(2px);
+}
+
+.button:hover svg.icon path {
+    animation: dash 0.8s linear forwards;
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 0, 20;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 10, 10;
+        stroke-dashoffset: -5;
+    }
+
+    100% {
+        stroke-dasharray: 20, 0;
+        stroke-dashoffset: -10;
+    }
+}
+
+/* ===== Features Section ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');

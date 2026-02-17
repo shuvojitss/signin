@@ -1,0 +1,1308 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nebula — Visual site builder</title>
+  <meta name="description" content="Nebula helps teams design and publish modern websites in minutes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/top.css') }}">
+  <link id="all-fonts-link-font-geist" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap">
+  <style id="all-fonts-style-font-geist">
+    .font-geist {
+      font-family: 'Geist', sans-serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-roboto" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap">
+  <style id="all-fonts-style-font-roboto">
+    .font-roboto {
+      font-family: 'Roboto', sans-serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-montserrat" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap">
+  <style id="all-fonts-style-font-montserrat">
+    .font-montserrat {
+      font-family: 'Montserrat', sans-serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-poppins" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap">
+  <style id="all-fonts-style-font-poppins">
+    .font-poppins {
+      font-family: 'Poppins', sans-serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-playfair" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap">
+  <style id="all-fonts-style-font-playfair">
+    .font-playfair {
+      font-family: 'Playfair Display', serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-instrument-serif" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap">
+  <style id="all-fonts-style-font-instrument-serif">
+    .font-instrument-serif {
+      font-family: 'Instrument Serif', serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-merriweather" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap">
+  <style id="all-fonts-style-font-merriweather">
+    .font-merriweather {
+      font-family: 'Merriweather', serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-bricolage" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap">
+  <style id="all-fonts-style-font-bricolage">
+    .font-bricolage {
+      font-family: 'Bricolage Grotesque', sans-serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-jakarta" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap">
+  <style id="all-fonts-style-font-jakarta">
+    .font-jakarta {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-manrope" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap">
+  <style id="all-fonts-style-font-manrope">
+    .font-manrope {
+      font-family: 'Manrope', sans-serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-space-grotesk" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap">
+  <style id="all-fonts-style-font-space-grotesk">
+    .font-space-grotesk {
+      font-family: 'Space Grotesk', sans-serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-work-sans" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap">
+  <style id="all-fonts-style-font-work-sans">
+    .font-work-sans {
+      font-family: 'Work Sans', sans-serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-pt-serif" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap">
+  <style id="all-fonts-style-font-pt-serif">
+    .font-pt-serif {
+      font-family: 'PT Serif', serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-geist-mono" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap">
+  <style id="all-fonts-style-font-geist-mono">
+    .font-geist-mono {
+      font-family: 'Geist Mono', monospace !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-space-mono" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap">
+  <style id="all-fonts-style-font-space-mono">
+    .font-space-mono {
+      font-family: 'Space Mono', monospace !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-quicksand" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap">
+  <style id="all-fonts-style-font-quicksand">
+    .font-quicksand {
+      font-family: 'Quicksand', sans-serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-nunito" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap">
+  <style id="all-fonts-style-font-nunito">
+    .font-nunito {
+      font-family: 'Nunito', sans-serif !important;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-black text-slate-100 antialiased selection:bg-indigo-500/30 selection:text-white"
+  style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;">
+
+  <div data-us-project="krvLrHX3sj3cg8BHywDj" class="absolute top-0 left-0 -z-10 w-full h-full"></div>
+  <script
+    type="text/javascript">!function () { if (!window.UnicornStudio) { window.UnicornStudio = { isInitialized: !1 }; var i = document.createElement("script"); i.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js", i.onload = function () { window.UnicornStudio.isInitialized || (UnicornStudio.init(), window.UnicornStudio.isInitialized = !0) }, (document.head || document.body).appendChild(i) } }();</script>
+
+  <!-- Backdrop glows -->
+  <div aria-hidden="true" class="pointer-events-none fixed inset-0 overflow-hidden">
+    <div
+      class="absolute -top-16 -left-24 h-96 w-96 rounded-full bg-gradient-to-tr from-indigo-600/40 via-sky-500/30 to-cyan-400/20 blur-3xl">
+    </div>
+    <div
+      class="absolute bottom-0 right-0 h-[28rem] w-[28rem] rounded-full bg-gradient-to-tr from-fuchsia-600/30 via-purple-600/20 to-sky-500/20 blur-3xl">
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="relative z-10">
+    <nav class="flex max-w-7xl md:px-6 mr-auto ml-auto pt-4 pr-4 pb-4 pl-4 items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <svg class="md:w-14 md:h-14 w-[36px] h-[36px]" viewBox="0 0 48 48" aria-hidden="true" stroke-width="2"
+          style="width: 36px; height: 36px;">
+          <path d="M24 10 L26 22 L38 24 L26 26 L24 38 L22 26 L10 24 L22 22 Z" fill="currentColor" class=""></path>
+        </svg>
+        <span class="text-lg font-medium tracking-tight">CyberDefenseX</span>
+      </a>
+
+      <button id="menuBtn"
+        class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="menu"
+          aria-hidden="true" class="lucide lucide-menu h-5 w-5 text-white">
+          <path d="M4 5h16"></path>
+          <path d="M4 12h16"></path>
+          <path d="M4 19h16"></path>
+        </svg>
+        <span class="sr-only">Open menu</span>
+      </button>
+
+      <div id="navLinks" class="hidden items-center gap-8 md:flex">
+        <a href="/" class="nav-link hover:text-white text-sm font-medium text-slate-300" style="">Home</a>
+        <a href="#features" class="nav-link hover:text-white text-sm font-medium text-slate-300" style="">Templates</a>
+        <a href="#footer" class="nav-link text-sm font-medium text-slate-300 hover:text-white">Docs</a>
+        <a href="#footer" class="nav-link text-sm font-medium text-slate-300 hover:text-white">Community</a>
+        <a href="#pricing" class="nav-link hover:text-white text-sm font-medium text-slate-300">Pricing</a>
+        <div class="hidden h-6 w-px bg-white/10 md:block"></div>
+        <a href="/login" class="text-sm font-medium text-slate-300 hover:text-white">Log in</a>
+        <a href="/signup"
+          class="group relative inline-flex cursor-pointer transition-all duration-[1000ms] ease-[cubic-bezier(0.15,0.83,0.66,1)] hover:-translate-y-[3px] hover:scale-[1.1] hover:text-white text-xs font-semibold text-white/70 tracking-tight rounded-full pt-[8px] pr-[16px] pb-[8px] pl-[16px] items-center justify-center"
+          style="box-shadow:inset 0 0 0 1px rgba(255,255,255,0.1);background:radial-gradient(ellipse at bottom,rgba(71,81,92,1) 0%,rgba(0,0,0,1) 100%);">
+          <span class="relative z-10 text-sm font-normal rounded-full">Sign Up</span>
+
+          <!-- replaces the old ::before underline -->
+          <span aria-hidden="true"
+            class="absolute bottom-0 left-1/2 h-[1px] w-[70%] -translate-x-1/2 opacity-20 transition-all duration-[1000ms] ease-[cubic-bezier(0.15,0.83,0.66,1)] group-hover:opacity-80 text-xs rounded-full"
+            style="background:linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);"></span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="mx-auto hidden max-w-7xl px-4 md:hidden">
+      <div class="space-y-1 rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur">
+        <a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-200 hover:bg-white/5" href="/">Home</a>
+        <a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-200 hover:bg-white/5"
+          href="#features">Templates</a>
+        <a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-200 hover:bg-white/5"
+          href="#footer">Docs</a>
+        <a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-200 hover:bg-white/5"
+          href="#footer">Community</a>
+        <a class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-200 hover:bg-white/5"
+          href="#pricing">Pricing</a>
+        <div class="my-2 h-px w-full bg-white/10"></div>
+        <div class="flex items-center gap-2">
+          <a href="/login"
+            class="flex-1 rounded-lg border border-white/10 bg-black/40 px-3 py-2 text-center text-sm font-medium text-slate-200 hover:bg-white/5">Log
+            in</a>
+          <a href="/signup"
+            class="flex-1 rounded-lg bg-white px-3 py-2 text-center text-sm font-medium text-black hover:bg-white/90">Sign
+            up</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative z-10">
+    <div class="md:px-6 md:pt-16 max-w-7xl mr-auto ml-auto pt-10 pr-4 pb-8 pl-4">
+      <div class="mx-auto max-w-3xl text-center">
+        <p
+          class="inline-flex items-center gap-2 text-xs font-medium text-slate-300 bg-white/5 border-white/10 border rounded-full mb-4 pt-1 pr-3 pb-1 pl-3">
+
+          New: Instant publish with atomic deploys
+        </p>
+        <h1 class="sm:text-5xl md:text-7xl text-4xl font-semibold tracking-tight">AI &amp; Blockchain Powered Autonomous
+          SOC Platform</h1>
+        <p class="md:text-lg text-base text-slate-300 mt-5">Automated SIEM + SOAR with Explainable AI, Immutable Log
+          Storage, and Smart Contract–Driven Incident Response.</p>
+
+        <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <a href="/login" class="button">
+            <div class="points_wrapper">
+              <i class="point"></i>
+              <i class="point"></i>
+              <i class="point"></i>
+              <i class="point"></i>
+              <i class="point"></i>
+              <i class="point"></i>
+              <i class="point"></i>
+              <i class="point"></i>
+              <i class="point"></i>
+              <i class="point"></i>
+            </div>
+
+            <span class="inner">Explore<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                <path d="M5 12h14" class=""></path>
+                <path d="m12 5 7 7-7 7" class=""></path>
+              </svg></span>
+          </a>
+
+          </button>
+          <button
+            class="group relative inline-flex items-center justify-center min-w-[120px] cursor-pointer rounded-xl px-[17px] py-[12px] text-white/70 tracking-tight font-semibold transition-all duration-[1000ms] ease-[cubic-bezier(0.15,0.83,0.66,1)] hover:-translate-y-[3px] hover:scale-[1.1] hover:text-white"
+            style="box-shadow:inset 0 0 0 1px rgba(255,255,255,0.1);background:radial-gradient(ellipse at bottom,rgba(71,81,92,1) 0%,rgba(0,0,0,1) 100%);">
+            <span class="relative z-10 font-normal">Watch demo</span>
+
+            <!-- replaces the old ::before underline -->
+            <span aria-hidden="true"
+              class="absolute bottom-0 left-1/2 h-[1px] w-[70%] -translate-x-1/2 opacity-20 transition-all duration-[1000ms] ease-[cubic-bezier(0.15,0.83,0.66,1)] group-hover:opacity-80"
+              style="background:linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);"></span>
+          </button>
+        </div>
+
+        <div class="mt-6 flex items-center justify-center gap-3 text-sm text-slate-400">
+          <div class="flex -space-x-2">
+            <img class="h-6 w-6 rounded-full ring-2 ring-black/60 object-cover"
+              src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/9c519027-8b76-493a-ae3c-8cf962ccdf04_320w.jpg"
+              alt="">
+            <img class="h-6 w-6 rounded-full ring-2 ring-black/60 object-cover"
+              src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8d3cb9d4-adbe-41e5-a351-a4a6c22d6037_800w.jpg"
+              alt="" style="">
+            <img class="h-6 w-6 rounded-full ring-2 ring-black/60 object-cover"
+              src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/69c45eba-968b-45e3-aff1-ebab9cb7b543_320w.jpg"
+              alt="" style="">
+          </div>
+          <span class="">Trusted by modern teams of all sizes</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Editor preview -->
+    <div class="-mb-8 max-w-7xl md:px-6 mr-auto ml-auto pr-4 pl-4">
+      <div
+        class="relative w-full overflow-hidden shadow-black/50 bg-gradient-to-b from-white/[0.04] to-white/[0.02] border-white/10 border rounded-2xl mr-auto ml-auto shadow-2xl backdrop-blur-xl">
+        <!-- Topbar -->
+        <div class="flex items-center justify-between border-b border-white/10 px-3 py-2">
+          <div class="flex items-center gap-2">
+            <span class="h-3 w-3 rounded-full bg-red-500/80"></span>
+            <span class="h-3 w-3 rounded-full bg-yellow-400/80"></span>
+            <span class="h-3 w-3 rounded-full bg-green-500/80"></span>
+            <div
+              class="ml-3 hidden items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-2 py-1 text-xs text-slate-300 sm:flex">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                data-lucide="layout-panel-left" aria-hidden="true"
+                class="lucide lucide-layout-panel-left h-3.5 w-3.5 text-slate-200">
+                <rect width="7" height="18" x="3" y="3" rx="1"></rect>
+                <rect width="7" height="7" x="14" y="3" rx="1"></rect>
+                <rect width="7" height="7" x="14" y="14" rx="1"></rect>
+              </svg>
+              Nebula Studio — Project: Aurora
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <button
+              class="hidden rounded-md border border-white/10 bg-white/5 p-1.5 text-slate-200 hover:bg-white/10 sm:inline-flex"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                data-lucide="share-2" aria-hidden="true" class="lucide lucide-share-2 h-4 w-4">
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
+                <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
+              </svg></button>
+            <button
+              class="hidden rounded-md border border-white/10 bg-white/5 p-1.5 text-slate-200 hover:bg-white/10 sm:inline-flex"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                data-lucide="users" aria-hidden="true" class="lucide lucide-users h-4 w-4">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+              </svg></button>
+            <button
+              class="rounded-md bg-sky-500/90 px-3 py-1.5 text-xs font-medium text-white hover:bg-sky-500">Publish</button>
+          </div>
+        </div>
+
+        <!-- Editor body -->
+        <div class="grid grid-cols-1 md:grid-cols-12">
+          <!-- Left panel -->
+          <aside class="hidden md:block md:col-span-3 bg-black/30 border-white/10 border-r pt-3 pr-3 pb-3 pl-3">
+            <div class="mb-3 flex items-center justify-between">
+              <div
+                class="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-2 py-1 text-xs font-medium text-slate-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  data-lucide="panel-left" aria-hidden="true" class="lucide lucide-panel-left h-3.5 w-3.5">
+                  <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+                  <path d="M9 3v18"></path>
+                </svg>
+                Outline
+              </div>
+              <button class="rounded-md border border-white/10 bg-white/5 p-1 text-slate-300 hover:bg-white/10">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  data-lucide="search" aria-hidden="true" class="lucide lucide-search h-4 w-4">
+                  <path d="m21 21-4.34-4.34"></path>
+                  <circle cx="11" cy="11" r="8"></circle>
+                </svg>
+              </button>
+            </div>
+
+            <div class="space-y-1 text-slate-300">
+              <div class="bg-white/5 rounded-lg pt-2 pr-2 pb-2 pl-2 space-y-3">
+                <div class="mb-1 flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      data-lucide="laptop" aria-hidden="true" class="lucide lucide-laptop h-4 w-4 text-sky-400">
+                      <path
+                        d="M18 5a2 2 0 0 1 2 2v8.526a2 2 0 0 0 .212.897l1.068 2.127a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45l1.068-2.127A2 2 0 0 0 4 15.526V7a2 2 0 0 1 2-2z">
+                      </path>
+                      <path d="M20.054 15.987H3.946"></path>
+                    </svg>
+                    <span class="text-xs font-medium">Desktop — 1200</span>
+                  </div>
+                  <span class="rounded-md bg-white/5 px-1.5 py-0.5 text-[10px] text-slate-400">Primary</span>
+                </div>
+                <ul class="space-y-1 pl-6 text-xs">
+                  <li class="flex items-center gap-2 rounded-md bg-sky-500/10 px-2 py-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      data-lucide="layers" aria-hidden="true" class="lucide lucide-layers h-3.5 w-3.5 text-sky-400">
+                      <path
+                        d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z">
+                      </path>
+                      <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path>
+                      <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path>
+                    </svg>
+                    Header
+                  </li>
+                  <li class="flex items-center gap-2 rounded-md px-2 py-1 hover:bg-white/5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      data-lucide="image" aria-hidden="true" class="lucide lucide-image h-3.5 w-3.5 text-purple-400">
+                      <rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect>
+                      <circle cx="9" cy="9" r="2"></circle>
+                      <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path>
+                    </svg>
+                    Hero
+                  </li>
+                  <li class="flex items-center gap-2 rounded-md px-2 py-1 hover:bg-white/5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      data-lucide="grid" aria-hidden="true" class="lucide lucide-grid h-3.5 w-3.5 text-emerald-400">
+                      <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+                      <path d="M3 9h18"></path>
+                      <path d="M3 15h18"></path>
+                      <path d="M9 3v18"></path>
+                      <path d="M15 3v18"></path>
+                    </svg>
+                    Features
+                  </li>
+                  <li class="flex items-center gap-2 rounded-md px-2 py-1 hover:bg-white/5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      data-lucide="credit-card" aria-hidden="true"
+                      class="lucide lucide-credit-card h-3.5 w-3.5 text-amber-400">
+                      <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                      <line x1="2" x2="22" y1="10" y2="10"></line>
+                    </svg>
+                    Pricing
+                  </li>
+                  <li class="flex items-center gap-2 rounded-md px-2 py-1 hover:bg-white/5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      data-lucide="messages-square" aria-hidden="true"
+                      class="lucide lucide-messages-square h-3.5 w-3.5 text-pink-400">
+                      <path
+                        d="M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z">
+                      </path>
+                      <path
+                        d="M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1">
+                      </path>
+                    </svg>
+                    Testimonials
+                  </li>
+                </ul>
+              </div>
+              <div class="bg-white/5 rounded-lg pt-2 pr-2 pb-2 pl-2 space-y-3">
+                <div class="mb-1 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    data-lucide="package" aria-hidden="true" class="lucide lucide-package h-4 w-4 text-indigo-400">
+                    <path
+                      d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z">
+                    </path>
+                    <path d="M12 22V12"></path>
+                    <polyline points="3.29 7 12 12 20.71 7"></polyline>
+                    <path d="m7.5 4.27 9 5.15"></path>
+                  </svg>
+                  <span class="text-xs font-medium">Assets</span>
+                </div>
+                <div class="grid grid-cols-3 gap-2">
+                  <div class="aspect-video overflow-hidden rounded-md bg-white/5">
+                    <img
+                      src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/0950426a-fd01-4dc5-a916-33b7c3a94646_320w.jpg"
+                      class="h-full w-full object-cover opacity-90" alt="" style="">
+                  </div>
+                  <div class="aspect-video overflow-hidden rounded-md bg-white/5">
+                    <img
+                      src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/859fc099-059b-4ec4-b0f1-06e736a8bdf4_320w.jpg"
+                      class="h-full w-full object-cover opacity-90" alt="" style="">
+                  </div>
+                  <div class="aspect-video overflow-hidden rounded-md bg-white/5">
+                    <img
+                      src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/f17ac654-630a-4fb6-ae2e-e2c4a8fe9274_320w.jpg"
+                      class="h-full w-full object-cover opacity-90" alt="" style="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Canvas -->
+          <main class="relative md:col-span-6 bg-black/20">
+            <div class="flex items-center gap-2 border-b border-white/10 px-3 py-2 text-xs text-slate-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                data-lucide="monitor-smartphone" aria-hidden="true"
+                class="lucide lucide-monitor-smartphone h-4 w-4 text-sky-400">
+                <path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8"></path>
+                <path d="M10 19v-3.96 3.15"></path>
+                <path d="M7 19h5"></path>
+                <rect width="6" height="10" x="16" y="12" rx="2"></rect>
+              </svg>
+              <span class="">Breakpoint</span>
+              <span class="rounded-md bg-white/5 px-1.5 py-0.5">Desktop</span>
+              <span class="text-slate-500">|</span>
+              <span>1200</span>
+              <div class="ml-auto flex items-center gap-1">
+                <button class="rounded-md border border-white/10 bg-white/5 p-1 hover:bg-white/10"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    data-lucide="undo-2" aria-hidden="true" class="lucide lucide-undo-2 h-4 w-4">
+                    <path d="M9 14 4 9l5-5"></path>
+                    <path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11"></path>
+                  </svg></button>
+                <button class="rounded-md border border-white/10 bg-white/5 p-1 hover:bg-white/10"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    data-lucide="redo-2" aria-hidden="true" class="lucide lucide-redo-2 h-4 w-4">
+                    <path d="m15 14 5-5-5-5"></path>
+                    <path d="M20 9H9.5A5.5 5.5 0 0 0 4 14.5A5.5 5.5 0 0 0 9.5 20H13"></path>
+                  </svg></button>
+              </div>
+            </div>
+
+            <div class="sm:p-6 pt-4 pr-4 pb-4 pl-4">
+              <div class="relative overflow-hidden rounded-xl border border-white/10 bg-white/5 ring-1 ring-white/10">
+                <img
+                  src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/9fb3eba2-d3b1-4a3c-9feb-29a0b47b70c6_1600w.jpg"
+                  class="h-[360px] w-full object-cover sm:h-[460px]" alt="">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+                <div class="absolute bottom-6 left-6 right-6">
+                  <div class="max-w-xl rounded-xl border border-white/10 bg-black/40 p-4 backdrop-blur">
+                    <h3 class="text-3xl sm:text-4xl font-semibold tracking-tight">Orion Canvas</h3>
+                    <p class="mt-1 text-sm text-slate-300">A limitless canvas with modern layout, motion, and type
+                      features—ready for production.</p>
+                    <div class="mt-3 flex items-center gap-2">
+                      <button
+                        class="inline-flex items-center gap-2 rounded-md bg-white px-3 py-1.5 text-xs font-medium text-black hover:bg-white/90">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          data-lucide="wand-2" aria-hidden="true" class="lucide lucide-wand-2 h-4 w-4">
+                          <path
+                            d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72">
+                          </path>
+                          <path d="m14 7 3 3"></path>
+                          <path d="M5 6v4"></path>
+                          <path d="M19 14v4"></path>
+                          <path d="M10 2v2"></path>
+                          <path d="M7 8H3"></path>
+                          <path d="M21 16h-4"></path>
+                          <path d="M11 3H9"></path>
+                        </svg>
+                        Auto layout
+                      </button>
+                      <button
+                        class="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-slate-200 hover:bg-white/10">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          data-lucide="move" aria-hidden="true" class="lucide lucide-move h-4 w-4">
+                          <path d="M12 2v20"></path>
+                          <path d="m15 19-3 3-3-3"></path>
+                          <path d="m19 9 3 3-3 3"></path>
+                          <path d="M2 12h20"></path>
+                          <path d="m5 9-3 3 3 3"></path>
+                          <path d="m9 5 3-3 3 3"></path>
+                        </svg>
+                        Drag
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mini device preview -->
+              <div
+                class="pointer-events-none absolute -bottom-6 right-4 hidden w-64 rounded-xl border border-white/10 bg-white/5 p-2 backdrop-blur lg:block">
+                <div class="rounded-lg border border-white/10 bg-black/50 p-2">
+                  <div class="aspect-[9/16] overflow-hidden rounded-md">
+                    <img
+                      src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/e080ec8d-304b-41cc-a8e7-c2b6efc8ab07_800w.jpg"
+                      class="h-full w-full object-cover" alt="">
+                  </div>
+                  <div class="mt-2 flex items-center justify-between text-[10px] text-slate-400">
+                    <span class="inline-flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" data-lucide="smartphone" aria-hidden="true"
+                        class="lucide lucide-smartphone h-3 w-3">
+                        <rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect>
+                        <path d="M12 18h.01"></path>
+                      </svg> Mobile 390</span>
+                    <span class="rounded bg-white/5 px-1 py-0.5">Preview</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+
+          <!-- Right panel -->
+          <aside class="hidden md:block md:col-span-3 border-l border-white/10 bg-black/30 p-3">
+            <div class="mb-3 flex items-center justify-between">
+              <div
+                class="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-2 py-1 text-xs font-medium text-slate-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  data-lucide="sliders-horizontal" aria-hidden="true"
+                  class="lucide lucide-sliders-horizontal h-3.5 w-3.5">
+                  <path d="M10 5H3"></path>
+                  <path d="M12 19H3"></path>
+                  <path d="M14 3v4"></path>
+                  <path d="M16 17v4"></path>
+                  <path d="M21 12h-9"></path>
+                  <path d="M21 19h-5"></path>
+                  <path d="M21 5h-7"></path>
+                  <path d="M8 10v4"></path>
+                  <path d="M8 12H3"></path>
+                </svg>
+                Properties
+              </div>
+              <button class="rounded-md border border-white/10 bg-white/5 p-1 text-slate-300 hover:bg-white/10">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  data-lucide="more-horizontal" aria-hidden="true" class="lucide lucide-more-horizontal h-4 w-4">
+                  <circle cx="12" cy="12" r="1"></circle>
+                  <circle cx="19" cy="12" r="1"></circle>
+                  <circle cx="5" cy="12" r="1"></circle>
+                </svg>
+              </button>
+            </div>
+
+            <div class="space-y-3">
+              <div class="bg-white/5 rounded-lg pt-3 pr-3 pb-3 pl-3 space-y-3">
+                <div class="mb-2 flex items-center justify-between text-xs">
+                  <span class="text-slate-300">Position</span>
+                  <span class="rounded-md bg-white/5 px-2 py-0.5 text-[10px] text-slate-400">Relative</span>
+                </div>
+                <div class="grid grid-cols-3 gap-2 text-[11px]">
+                  <button
+                    class="rounded-md border border-white/10 bg-white/5 px-2 py-1 text-slate-300 hover:bg-white/10"><svg
+                      xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      data-lucide="align-start-vertical" aria-hidden="true"
+                      class="lucide lucide-align-start-vertical mr-1 inline h-3.5 w-3.5">
+                      <rect width="9" height="6" x="6" y="14" rx="2"></rect>
+                      <rect width="16" height="6" x="6" y="4" rx="2"></rect>
+                      <path d="M2 2v20"></path>
+                    </svg>Top</button>
+                  <button
+                    class="rounded-md border border-white/10 bg-white/5 px-2 py-1 text-slate-300 hover:bg-white/10"><svg
+                      xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      data-lucide="align-center-vertical" aria-hidden="true"
+                      class="lucide lucide-align-center-vertical mr-1 inline h-3.5 w-3.5">
+                      <path d="M12 2v20"></path>
+                      <path d="M8 10H4a2 2 0 0 1-2-2V6c0-1.1.9-2 2-2h4"></path>
+                      <path d="M16 10h4a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-4"></path>
+                      <path d="M8 20H7a2 2 0 0 1-2-2v-2c0-1.1.9-2 2-2h1"></path>
+                      <path d="M16 14h1a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-1"></path>
+                    </svg>Center</button>
+                  <button
+                    class="rounded-md border border-white/10 bg-white/5 px-2 py-1 text-slate-300 hover:bg-white/10"><svg
+                      xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      data-lucide="align-end-vertical" aria-hidden="true"
+                      class="lucide lucide-align-end-vertical mr-1 inline h-3.5 w-3.5">
+                      <rect width="16" height="6" x="2" y="4" rx="2"></rect>
+                      <rect width="9" height="6" x="9" y="14" rx="2"></rect>
+                      <path d="M22 22V2"></path>
+                    </svg>Bottom</button>
+                </div>
+              </div>
+
+              <div class="bg-white/5 rounded-lg pt-3 pr-3 pb-3 pl-3 space-y-3">
+                <div class="mb-2 flex items-center justify-between text-xs">
+                  <span class="text-slate-300 font-medium">Size</span>
+                  <span class="rounded-md bg-white/5 px-2 py-0.5 text-[10px] text-slate-400">Auto</span>
+                </div>
+                <div class="grid grid-cols-2 gap-2 text-[11px]">
+                  <div
+                    class="rounded-md border border-white/10 bg-black/40 px-2 py-1 text-slate-300 font-medium text-center">
+                    W: 1200</div>
+                  <div
+                    class="rounded-md border border-white/10 bg-black/40 px-2 py-1 text-slate-300 font-medium text-center">
+                    H: Auto</div>
+                </div>
+                <div class="mt-2 grid grid-cols-4 gap-2 text-[11px]">
+                  <button
+                    class="rounded-md border border-white/10 bg-white/5 px-2 py-1 text-slate-300 font-medium hover:bg-white/10 transition focus:ring-2 focus:ring-sky-500 focus:outline-none">Fill</button>
+                  <button
+                    class="rounded-md border border-white/10 bg-white/5 px-2 py-1 text-slate-300 font-medium hover:bg-white/10 transition focus:ring-2 focus:ring-sky-500 focus:outline-none">Fit</button>
+                  <button
+                    class="rounded-md border border-white/10 bg-white/5 px-2 py-1 text-slate-300 font-medium hover:bg-white/10 transition focus:ring-2 focus:ring-sky-500 focus:outline-none">Fixed
+                  </button><button
+                    class="rounded-md border border-white/10 bg-white/5 px-2 py-1 text-slate-300 font-medium hover:bg-white/10 transition focus:ring-2 focus:ring-sky-500 focus:outline-none">Min</button>
+                </div>
+              </div>
+
+              <div class="bg-white/5 rounded-lg pt-3 pr-3 pb-3 pl-3 space-y-3">
+                <div class="mb-2 flex items-center justify-between text-xs">
+                  <span class="text-slate-300">Effects</span>
+                  <span class="rounded-md bg-white/5 px-2 py-0.5 text-[10px] text-slate-400">3</span>
+                </div>
+                <div class="space-y-2 text-[11px]">
+                  <div class="flex items-center justify-between">
+                    <span class="inline-flex items-center gap-1 text-slate-300"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" data-lucide="droplet" aria-hidden="true"
+                        class="lucide lucide-droplet w-[14px] h-[14px]" data-icon-replaced="true"
+                        style="width: 14px; height: 14px; color: rgb(56, 189, 248);">
+                        <path
+                          d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z">
+                        </path>
+                      </svg>Blur</span>
+                    <span class="rounded bg-white/5 px-1.5 py-0.5 text-slate-400">8px</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="inline-flex items-center gap-1 text-slate-300"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" data-lucide="sun" aria-hidden="true"
+                        class="lucide lucide-sun h-3.5 w-3.5 text-amber-400">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2v2"></path>
+                        <path d="M12 20v2"></path>
+                        <path d="m4.93 4.93 1.41 1.41"></path>
+                        <path d="m17.66 17.66 1.41 1.41"></path>
+                        <path d="M2 12h2"></path>
+                        <path d="M20 12h2"></path>
+                        <path d="m6.34 17.66-1.41 1.41"></path>
+                        <path d="m19.07 4.93-1.41 1.41"></path>
+                      </svg>Glow</span>
+                    <span class="rounded bg-white/5 px-1.5 py-0.5 text-slate-400">20%</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="inline-flex items-center gap-1 text-slate-300"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" data-lucide="layers" aria-hidden="true"
+                        class="lucide lucide-layers h-3.5 w-3.5 text-purple-400">
+                        <path
+                          d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z">
+                        </path>
+                        <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path>
+                        <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path>
+                      </svg>Blend</span>
+                    <span class="rounded bg-white/5 px-1.5 py-0.5 text-slate-400">Overlay</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="relative overflow-hidden antialiased z-10 text-neutral-200 bg-black"
+    style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest" class=""></script>
+    <div
+      class="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_40%_at_70%_30%,rgba(120,119,198,0.15),transparent_60%)]">
+    </div>
+    <section id="features" class="md:px-8 md:py-32 max-w-7xl mr-auto ml-auto pt-24 pr-6 pb-24 pl-6">
+      <div class="text-center mb-16 md:mb-20">
+        <p
+          class="inline-flex items-center gap-2 text-xs font-medium text-slate-300 bg-white/5 border-white/10 border rounded-full mb-4 pt-1 pr-3 pb-1 pl-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="workflow"
+            aria-hidden="true" class="lucide lucide-workflow h-4 w-4 text-emerald-400">
+            <rect width="8" height="8" x="3" y="3" rx="2"></rect>
+            <path d="M7 11v4a2 2 0 0 0 2 2h4"></path>
+            <rect width="8" height="8" x="13" y="13" rx="2"></rect>
+          </svg> Autonomous Security Workflows</p>
+        <h2 class="sm:text-4xl lg:text-5xl text-3xl font-semibold text-white tracking-tight mb-4">Everything You Need to
+          Automate Your SOC</h2>
+        <p class="text-lg text-slate-300 max-w-2xl mr-auto ml-auto">From real-time log ingestion to blockchain-verified
+          evidence and AI-driven response automation — CyberDefenseX transforms security operations into a fully
+          autonomous defense engine.</p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+        <div class="order-2 lg:order-1">
+          <h3 class="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-white mb-8">
+            Build workflows that work for your team
+          </h3>
+          <div id="bulletList" class="space-y-6"><button type="button" data-index="0"
+              class="group w-full flex items-start gap-4 text-left p-4 rounded-xl transition-all hover:bg-white/[0.02] border border-transparent hover:border-white/10">
+              <div class="flex-shrink-0"><span
+                  class="h-8 w-1 rounded-full bg-emerald-400 transition-colors block"></span></div>
+              <div class=""><span class="sm:text-lg block text-base font-semibold text-white mb-2">Real-Time Log
+                  Intelligence</span><span class="leading-relaxed text-sm text-neutral-400">Monitor, normalize, and
+                  analyze millions of logs per second across distributed systems. Agent-based log forwarding.</span>
+              </div>
+            </button><button type="button" data-index="1"
+              class="group w-full flex items-start gap-4 text-left p-4 rounded-xl transition-all hover:bg-white/[0.02] border border-transparent hover:border-white/10">
+              <div class="flex-shrink-0"><span
+                  class="h-8 w-1 rounded-full bg-neutral-700 group-hover:bg-neutral-600 transition-colors block"></span>
+              </div>
+              <div class=""><span
+                  class="sm:text-lg group-hover:text-neutral-300 block text-base font-semibold text-neutral-500 mb-2">Blockchain-Backed
+                  Evidence Storage</span><span
+                  class="group-hover:text-neutral-400 leading-relaxed text-sm text-neutral-500">Immutable log chains
+                  with SHA-256 cryptographic linking. Hash-based tamper detection. Validator node verification.</span>
+              </div>
+            </button><button type="button" data-index="2"
+              class="group w-full flex items-start gap-4 text-left p-4 rounded-xl transition-all hover:bg-white/[0.02] border border-transparent hover:border-white/10">
+              <div class="flex-shrink-0"><span
+                  class="h-8 w-1 rounded-full bg-neutral-700 group-hover:bg-neutral-600 transition-colors block"></span>
+              </div>
+              <div class=""><span
+                  class="sm:text-lg group-hover:text-neutral-300 block text-base font-semibold text-neutral-500 mb-2">ML-Powered
+                  Threat Detection</span><span
+                  class="group-hover:text-neutral-400 leading-relaxed text-sm text-neutral-500">Explainable machine
+                  learning models classify attacks in real-time.
+                  Multi-class detection: DDoS, Brute force, SQL injection, Port Scanning</span></div>
+            </button></div>
+        </div>
+        <div class="relative order-1 lg:order-2">
+          <div
+            class="relative rounded-2xl border border-neutral-800/80 bg-neutral-900/50 shadow-[0_20px_80px_-20px_rgba(0,0,0,0.8)] ring-1 ring-white/5 backdrop-blur-md overflow-hidden">
+            <div class="h-14 flex items-center gap-3 px-6 border-b border-neutral-800/70 text-neutral-400">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                data-lucide="file-text" aria-hidden="true" class="lucide lucide-file-text w-5 h-5">
+                <path
+                  d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z">
+                </path>
+                <path d="M14 2v5a1 1 0 0 0 1 1h5"></path>
+                <path d="M10 9H8"></path>
+                <path d="M16 13H8"></path>
+                <path d="M16 17H8"></path>
+              </svg>
+              <div class="flex items-center gap-2 text-sm">
+                <span class="truncate font-medium">Nebula workspace</span>
+                <span class="opacity-50">›</span>
+                <span class="truncate text-neutral-300 font-medium">Product strategy</span>
+              </div>
+              <div class="ml-auto flex items-center gap-2 opacity-60">
+                <div class="flex -space-x-1">
+                  <div
+                    class="w-6 h-6 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center">
+                    <span class="text-[10px] font-medium text-emerald-300">N</span>
+                  </div>
+                  <div
+                    class="w-6 h-6 rounded-full bg-violet-500/20 border border-violet-500/40 flex items-center justify-center">
+                    <span class="text-[10px] font-medium text-violet-300">L</span>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                  data-lucide="more-horizontal" aria-hidden="true" class="lucide lucide-more-horizontal w-4 h-4">
+                  <circle cx="12" cy="12" r="1"></circle>
+                  <circle cx="19" cy="12" r="1"></circle>
+                  <circle cx="5" cy="12" r="1"></circle>
+                </svg>
+              </div>
+            </div>
+            <div class="relative px-8 py-10">
+              <div class="absolute left-4 top-1/2 -translate-y-1/2 flex flex-col gap-1.5 text-neutral-700">
+                <span class="w-1.5 h-1.5 rounded-full bg-current"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-current"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-current"></span>
+              </div>
+              <div id="iconBox"
+                class="w-16 h-16 rounded-xl flex items-center justify-center mb-6 bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/20">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                  data-lucide="users" aria-hidden="true" class="lucide lucide-users w-7 h-7">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                </svg></div>
+              <div class="relative mb-6">
+                <h4 class="text-3xl font-semibold tracking-tight text-white flex flex-wrap items-center gap-3 mb-3">
+                  <span id="highlightPill"
+                    class="inline-flex items-center rounded-lg px-3 py-2 ring-1 text-lg ring-emerald-500/60 bg-emerald-500/10 text-emerald-200">Co‑create</span>
+                  <span id="highlightTail" class="">product briefs</span>
+                </h4>
+                <div id="badgesLayer" class="relative"></div>
+              </div>
+              <p id="bodyCopy" class="text-neutral-400 leading-relaxed text-lg mb-8">Draft clear <span
+                  class="rounded-md px-2 py-0.5 ring-1"
+                  style="background:rgba(16,185,129,0.18); box-shadow: inset 0 0 0 1px rgba(16,185,129,0.35);">briefs</span>
+                together with multiplayer editing. Structure work with headings, <span
+                  class="rounded-md px-2 py-0.5 ring-1"
+                  style="background:rgba(139,92,246,0.18); box-shadow: inset 0 0 0 1px rgba(139,92,246,0.35);">checklists</span>,
+                and callouts.</p>
+              <div class="space-y-3 mb-6">
+                <div class="h-2 rounded-full bg-neutral-800/70 w-4/5"></div>
+                <div class="h-2 rounded-full bg-neutral-800/70 w-full"></div>
+                <div class="h-2 rounded-full bg-neutral-800/70 w-3/5"></div>
+              </div>
+              <div class="space-y-3 opacity-60">
+                <div class="h-2 rounded-full bg-neutral-800/70 w-5/6"></div>
+                <div class="h-2 rounded-full bg-neutral-800/70 w-3/4"></div>
+                <div class="h-2 rounded-full bg-neutral-800/70 w-4/5"></div>
+              </div>
+              <div
+                class="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-neutral-950/90 to-transparent">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script class="">
+      const slides = [{ key: 'docs', bullet: 'Real‑time briefs', accent: 'emerald', icon: 'users', pillText: 'Co‑create', tailText: 'product briefs', body: 'Draft clear briefs together with multiplayer editing. Structure work with headings, checklists, and callouts.', description: 'Collaborate on project briefs with your team in real-time. No more version conflicts or missed updates.', badges: [{ text: 'noa', color: 'emerald', target: 'briefs' }, { text: 'leo', color: 'violet', target: 'checklists' }] }, { key: 'comments', bullet: 'Threaded reviews', accent: 'amber', icon: 'message-square', pillText: 'Review in', tailText: 'context', body: 'Keep decisions attached to the work with inline threads. Mention teammates, resolve quickly, and move forward.', description: 'Keep feedback organized with contextual comment threads. Never lose track of important decisions.', badges: [{ text: 'ivan', color: 'amber', target: 'threads' }, { text: 'sara', color: 'sky', target: 'Mention' }] }, { key: 'commands', bullet: 'Commands to tickets', accent: 'violet', icon: 'workflow', pillText: 'Turn notes into', tailText: 'tickets', body: 'Use quick commands to convert writing into scoped tickets with owners, labels, and estimates.', description: 'Transform ideas into actionable tasks with smart command shortcuts. From thought to execution, instantly.', badges: [{ text: 'jin', color: 'violet', target: 'tickets' }, { text: 'nora', color: 'emerald', target: 'owners' }] }]; const accents = { emerald: { pill: 'ring-emerald-500/60 bg-emerald-500/10 text-emerald-200', iconBox: 'bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/20', bar: 'bg-emerald-400', }, amber: { pill: 'ring-amber-500/60 bg-amber-500/10 text-amber-200', iconBox: 'bg-amber-500/10 text-amber-400 ring-1 ring-amber-500/20', bar: 'bg-amber-400', }, violet: { pill: 'ring-violet-500/60 bg-violet-500/10 text-violet-200', iconBox: 'bg-violet-500/10 text-violet-400 ring-1 ring-violet-500/20', bar: 'bg-violet-400', }, sky: { pill: 'ring-sky-500/60 bg-sky-500/10 text-sky-200', iconBox: 'bg-sky-500/10 text-sky-400 ring-1 ring-sky-500/20', bar: 'bg-sky-400', } }; const highlightMap = { docs: ['briefs', 'checklists'], comments: ['threads', 'Mention'], commands: ['tickets', 'owners'] }; const root = document.querySelector('[data-component="feature-rotator"]') || document.querySelector('div'); const bulletList = document.getElementById('bulletList'); const iconBox = document.getElementById('iconBox'); const highlightPill = document.getElementById('highlightPill'); const highlightTail = document.getElementById('highlightTail'); const bodyCopy = document.getElementById('bodyCopy'); const badgesLayer = document.getElementById('badgesLayer'); function renderBullets(active) { bulletList.innerHTML = ''; slides.forEach((s, i) => { const isActive = i === active; const row = document.createElement('button'); row.type = 'button'; row.setAttribute('data-index', i); row.className = 'group w-full flex items-start gap-4 text-left p-4 rounded-xl transition-all hover:bg-white/[0.02] border border-transparent hover:border-white/10'; row.innerHTML = `<div class="flex-shrink-0"><span class="h-8 w-1 rounded-full ${isActive ? accents[slides[active].accent].bar : 'bg-neutral-700 group-hover:bg-neutral-600'} transition-colors block"></span></div><div><span class="text-base sm:text-lg ${isActive ? 'text-white' : 'text-neutral-500 group-hover:text-neutral-300'} font-semibold block mb-2">${s.bullet}</span><span class="text-sm ${isActive ? 'text-neutral-400' : 'text-neutral-500 group-hover:text-neutral-400'} leading-relaxed">${s.description}</span></div>`; row.addEventListener('click', () => setActive(i, true)); bulletList.appendChild(row); }); } function setIcon(icon, accent) { iconBox.className = `w-16 h-16 rounded-xl flex items-center justify-center mb-6 ${accents[accent].iconBox}`; iconBox.innerHTML = `<i data-lucide="${icon}" class="w-7 h-7"></i>`; lucide.createIcons({ attrs: { 'stroke-width': 1.5 } }); } function setBadges() { badgesLayer.innerHTML = ''; } function colorMap(name, alpha = 1) { const colors = { emerald: `rgba(16,185,129,${alpha})`, violet: `rgba(139,92,246,${alpha})`, amber: `rgba(245,158,11,${alpha})`, sky: `rgba(14,165,233,${alpha})` }; return colors[name] || `rgba(16,185,129,${alpha})`; } function escapeRegExp(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); } function applyHighlights(text, slideKey, badges) { const tokens = (highlightMap[slideKey] || []).slice(); let result = text; tokens.forEach((token, idx) => { const b = badges[idx]; if (!b) return; const re = new RegExp(`\\b(${escapeRegExp(token)})\\b`, 'i'); const bg = colorMap(b.color, 0.18); const border = colorMap(b.color, 0.35); result = result.replace(re, (m) => { return `<span class="rounded-md px-2 py-0.5 ring-1" style="background:${bg}; box-shadow: inset 0 0 0 1px ${border};">${m}</span>`; }); }); return result; } let index = 0; let timer; function setActive(i, manual = false) { index = i % slides.length; if (index < 0) index = slides.length - 1; const s = slides[index]; renderBullets(index); setIcon(s.icon, s.accent); highlightPill.className = `inline-flex items-center rounded-lg px-3 py-2 ring-1 text-lg ${accents[s.accent].pill}`; highlightPill.textContent = s.pillText; highlightTail.textContent = s.tailText; bodyCopy.innerHTML = applyHighlights(s.body, s.key, s.badges); setBadges(); if (manual) { clearInterval(timer); timer = startRotation(); } } function startRotation() { return setInterval(() => setActive((index + 1) % slides.length), 5000); } renderBullets(index); setActive(0); timer = startRotation(); root.addEventListener('mouseenter', () => clearInterval(timer)); root.addEventListener('mouseleave', () => { clearInterval(timer); timer = startRotation(); }); setTimeout(() => lucide.createIcons({ attrs: { 'stroke-width': 1.5 } }), 100);
+    </script>
+  </div>
+  <div id="pricing" class="pt-24 pr-6 pb-24 pl-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="border-white/10 border rounded-3xl p-12 lg:p-16"
+        style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px);">
+        <div class="text-center mb-16">
+          <p
+            class="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="h-4 w-4 text-sky-400">
+              <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"></path>
+            </svg>
+            Flexible pricing plans
+          </p>
+          <h3 class="text-3xl lg:text-4xl text-white tracking-tight mb-6 font-semibold">Choose your perfect plan</h3>
+          <p class="text-lg text-slate-300 max-w-3xl mx-auto">
+            From solo creators to enterprise teams, Nebula scales with your needs. Start free and upgrade as you grow.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div class="relative rounded-2xl border border-white/10 p-8" style="background: rgba(255, 255, 255, 0.02);">
+            <div class="mb-8">
+              <h4 class="text-xl font-semibold text-white mb-2">Starter</h4>
+              <p class="text-sm text-slate-400 mb-6">Perfect For startups &amp; small teams.</p>
+              <div class="flex items-baseline gap-2">
+                <span class="text-4xl text-white font-semibold">Free</span>
+                <span class="text-sm text-slate-400">forever</span>
+              </div>
+            </div>
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="text-sky-400 flex-shrink-0">
+                  <path d="m9 12 2 2 4-4"></path>
+                  <circle cx="12" cy="12" r="10"></circle>
+                </svg>
+                <span class="text-sm text-slate-300">Up to 5 monitored servers</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="text-sky-400 flex-shrink-0">
+                  <path d="m9 12 2 2 4-4"></path>
+                  <circle cx="12" cy="12" r="10"></circle>
+                </svg>
+                <span class="text-sm text-slate-300">Basic AI threat detection</span>
+              </li>
+              <li class="flex gap-3 gap-x-3 gap-y-3 items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="text-sky-400 flex-shrink-0">
+                  <path d="m9 12 2 2 4-4"></path>
+                  <circle cx="12" cy="12" r="10" class=""></circle>
+                </svg>
+                <span class="text-sm text-slate-300" style="">Basic templates</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="text-sky-400 flex-shrink-0">
+                  <path d="m9 12 2 2 4-4"></path>
+                  <circle cx="12" cy="12" r="10"></circle>
+                </svg>
+                <span class="text-sm text-slate-300">Community support</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="text-sky-400 flex-shrink-0">
+                  <path d="m9 12 2 2 4-4"></path>
+                  <circle cx="12" cy="12" r="10"></circle>
+                </svg>
+                <span class="text-sm text-slate-300">Nebula subdomain</span>
+              </li>
+            </ul>
+            <button
+              class="w-full py-4 px-6 rounded-xl text-sm font-medium text-white border border-white/20 hover:border-white/30 transition-all duration-300 hover:bg-white/5"
+              style="background: rgba(255, 255, 255, 0.03);">Get Started Free</button>
+          </div>
+          <div class="relative rounded-2xl border border-sky-500/30 p-8" style="background: rgba(14, 165, 233, 0.05);">
+            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+              <span class="px-4 py-1 text-xs font-medium text-white rounded-full border border-sky-500/30"
+                style="background: rgba(14, 165, 233, 0.15);">Most Popular</span>
+            </div>
+            <div class="mb-8">
+              <h4 class="text-xl font-semibold text-white mb-2">Pro</h4>
+              <p class="text-sm text-slate-400 mb-6">Advanced features for professional designers and growing teams.</p>
+              <div class="flex items-baseline gap-2">
+                <span class="text-4xl text-white font-semibold">$12</span>
+                <span class="text-sm text-slate-400">per month</span>
+              </div>
+            </div>
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="text-sky-400 flex-shrink-0">
+                  <path d="m9 12 2 2 4-4"></path>
+                  <circle cx="12" cy="12" r="10"></circle>
+                </svg>
+                <span class="text-sm text-slate-300">Unlimited projects</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="text-sky-400 flex-shrink-0">
+                  <path d="m9 12 2 2 4-4"></path>
+                  <circle cx="12" cy="12" r="10"></circle>
+                </svg>
+                <span class="text-sm text-slate-300">Advanced animations</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="text-sky-400 flex-shrink-0">
+                  <path d="m9 12 2 2 4-4"></path>
+                  <circle cx="12" cy="12" r="10"></circle>
+                </svg>
+                <span class="text-sm text-slate-300">Custom domains</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="text-sky-400 flex-shrink-0">
+                  <path d="m9 12 2 2 4-4"></path>
+                  <circle cx="12" cy="12" r="10"></circle>
+                </svg>
+                <span class="text-sm text-slate-300">Real-time collaboration</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="text-sky-400 flex-shrink-0">
+                  <path d="m9 12 2 2 4-4"></path>
+                  <circle cx="12" cy="12" r="10"></circle>
+                </svg>
+                <span class="text-sm text-slate-300">Priority support</span>
+              </li>
+            </ul>
+            <button
+              class="w-full py-4 px-6 rounded-xl text-sm font-medium text-white border border-sky-500/30 hover:border-sky-500/50 transition-all duration-300"
+              style="background: rgba(14, 165, 233, 0.15);">Start Pro Trial</button>
+          </div>
+          <div class="relative rounded-2xl border border-white/10 p-8" style="background: rgba(255, 255, 255, 0.02);">
+            <div class="mb-8">
+              <h4 class="text-xl font-semibold text-white mb-2">Enterprise</h4>
+              <p class="text-sm text-slate-400 mb-6">
+                Powerful tools and dedicated support for large teams and organizations.
+              </p>
+              <div class="flex items-baseline gap-2">
+                <span class="text-4xl text-white font-semibold">Custom</span>
+                <span class="text-sm text-slate-400">pricing</span>
+              </div>
+            </div>
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="text-sky-400 flex-shrink-0">
+                  <path d="m9 12 2 2 4-4"></path>
+                  <circle cx="12" cy="12" r="10"></circle>
+                </svg>
+                <span class="text-sm text-slate-300">Unlimited everything</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="text-sky-400 flex-shrink-0">
+                  <path d="m9 12 2 2 4-4"></path>
+                  <circle cx="12" cy="12" r="10"></circle>
+                </svg>
+                <span class="text-sm text-slate-300">Advanced security &amp; SSO</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="text-sky-400 flex-shrink-0">
+                  <path d="m9 12 2 2 4-4"></path>
+                  <circle cx="12" cy="12" r="10"></circle>
+                </svg>
+                <span class="text-sm text-slate-300">White-label options</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="text-sky-400 flex-shrink-0">
+                  <path d="m9 12 2 2 4-4"></path>
+                  <circle cx="12" cy="12" r="10"></circle>
+                </svg>
+                <span class="text-sm text-slate-300">Dedicated account manager</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="text-sky-400 flex-shrink-0">
+                  <path d="m9 12 2 2 4-4"></path>
+                  <circle cx="12" cy="12" r="10"></circle>
+                </svg>
+                <span class="text-sm text-slate-300">Custom integrations</span>
+              </li>
+            </ul>
+            <button
+              class="w-full py-4 px-6 rounded-xl text-sm font-medium text-white border border-white/20 hover:border-white/30 transition-all duration-300 hover:bg-white/5"
+              style="background: rgba(255, 255, 255, 0.03);">Contact Sales</button>
+          </div>
+        </div>
+        <div class="text-center mt-16 pt-12 border-t border-white/10">
+          <p class="text-sm text-slate-400 mb-6">
+            All plans include SSL certificates, global CDN, and 99.9% uptime guarantee. No setup fees or hidden costs.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              class="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-medium text-slate-200 border border-white/20 hover:border-white/30 transition-all duration-300 hover:bg-white/5"
+              style="background: rgba(255, 255, 255, 0.03);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+                <path d="M8 2v4"></path>
+                <path d="M16 2v4"></path>
+                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                <path d="M3 10h18"></path>
+              </svg>
+              Schedule Demo
+            </button>
+            <button
+              class="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-medium text-slate-300 border border-white/10 hover:border-white/20 transition-all duration-300 hover:bg-white/5"
+              style="background: rgba(255, 255, 255, 0.02);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14,2 14,8 20,8"></polyline>
+                <line x1="16" x2="8" y1="13" y2="13"></line>
+                <line x1="16" x2="8" y1="17" y2="17"></line>
+                <polyline points="10,9 9,9 8,9"></polyline>
+              </svg>
+              View Full Pricing
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer strip -->
+  <footer id="footer" class="relative z-10">
+    <div class="mx-auto max-w-7xl px-4 py-12 md:px-6">
+      <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center">
+        <div class="mx-auto max-w-2xl">
+          <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">Design together. Publish instantly.</h2>
+          <p class="mt-2 text-sm text-slate-400">Skip handoff. Nebula connects your ideas to production with one click
+            deploys.</p>
+          <div class="mt-4 flex items-center justify-center gap-3">
+            <a href="#"
+              class="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2.5 text-xs font-medium text-black hover:bg-white/90">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                data-lucide="arrow-right" aria-hidden="true" class="lucide lucide-arrow-right h-4 w-4">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+              Get started
+            </a>
+            <a href="#"
+              class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2.5 text-xs font-medium text-slate-200 hover:bg-white/10">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                data-lucide="book-open" aria-hidden="true" class="lucide lucide-book-open h-4 w-4">
+                <path d="M12 7v14"></path>
+                <path
+                  d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z">
+                </path>
+              </svg>
+              Read docs
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-6 flex flex-col items-center justify-between gap-3 text-xs text-slate-500 sm:flex-row">
+        <span>© <span id="year">2026</span> Nebula Labs</span>
+        <div class="flex items-center gap-4">
+          <a href="#" class="hover:text-slate-300">Terms</a>
+          <a href="#" class="hover:text-slate-300">Privacy</a>
+          <a href="#" class="hover:text-slate-300">Status</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    // Icons
+    lucide.createIcons();
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+
+          // Close mobile menu if open
+          const mobileMenu = document.getElementById('mobileMenu');
+          if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+          }
+
+          // Smooth scroll with offset for fixed header
+          const headerHeight = document.querySelector('header')?.offsetHeight || 80;
+          const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+
+          // Update active nav link
+          document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+          this.classList.add('active');
+        }
+      });
+    });
+
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections for fade-in effect
+    document.querySelectorAll('section, footer, .fade-in-section').forEach(section => {
+      section.classList.add('fade-in-section');
+      observer.observe(section);
+    });
+
+    // Header scroll effect
+    const header = document.querySelector('header');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+
+      if (currentScroll > 50) {
+        header?.classList.add('scrolled');
+      } else {
+        header?.classList.remove('scrolled');
+      }
+
+      lastScroll = currentScroll;
+    }, { passive: true });
+
+    // Update active nav link on scroll
+    const sections = document.querySelectorAll('section[id], footer[id], div[id]');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      const headerHeight = document.querySelector('header')?.offsetHeight || 80;
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - headerHeight - 100;
+        const sectionBottom = sectionTop + section.offsetHeight;
+
+        if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionBottom) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    }, { passive: true });
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      menuBtn.innerHTML = isOpen ? '<i data-lucide="x" class="h-5 w-5 text-white"></i>' : '<i data-lucide="menu" class="h-5 w-5 text-white"></i>';
+      lucide.createIcons();
+    });
+
+    // Demo modal
+    const openDemo = document.getElementById('openDemo');
+    const demoModal = document.getElementById('demoModal');
+    const closeDemo = document.getElementById('closeDemo');
+    openDemo?.addEventListener('click', () => {
+      demoModal.classList.remove('hidden');
+    });
+    closeDemo?.addEventListener('click', () => {
+      demoModal.classList.add('hidden');
+    });
+    demoModal?.addEventListener('click', (e) => {
+      if (e.target === demoModal) demoModal.classList.add('hidden');
+    });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+
+<body class="min-h-screen flex items-center justify-center">
+
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
+    </div>
+
+    <!-- Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Main Card -->
+    <div class="glass-card rounded-2xl p-10 w-full max-w-lg mx-4 relative overflow-hidden text-center">
+        <!-- Decorative line at top -->
+        <div
+            class="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent rounded-full">
+        </div>
+
+        <!-- Avatar -->
+        <div class="flex justify-center mb-6">
+            <div class="avatar">
+                {{ fullname[0] if fullname else username[0] }}
+            </div>
+        </div>
+
+        <!-- Welcome Message -->
+        <h1 class="text-4xl font-bold text-white mb-2">Welcome back!</h1>
+        <p class="text-xl text-gray-300 mb-2">
+            <span class="gradient-text font-semibold">{{ fullname or username }}</span>
+        </p>
+        <p class="text-sm text-gray-500 mb-8">@{{ username }}</p>
+
+        <!-- Stats or Info Section -->
+        <div class="grid grid-cols-2 gap-4 mb-8">
+            <div class="bg-white/5 rounded-xl p-4 border border-white/10">
+                <i data-lucide="calendar" class="w-6 h-6 text-cyan-400 mx-auto mb-2"></i>
+                <p class="text-xs text-gray-500">Joined</p>
+                <p class="text-white font-medium">Today</p>
+            </div>
+            <div class="bg-white/5 rounded-xl p-4 border border-white/10">
+                <i data-lucide="shield-check" class="w-6 h-6 text-green-400 mx-auto mb-2"></i>
+                <p class="text-xs text-gray-500">Status</p>
+                <p class="text-white font-medium">Active</p>
+            </div>
+        </div>
+
+        <!-- Success Message -->
+        <div class="bg-green-500/10 border border-green-500/30 rounded-xl p-4 mb-8">
+            <div class="flex items-center justify-center gap-2 text-green-400">
+                <i data-lucide="check-circle" class="w-5 h-5"></i>
+                <span class="font-medium">Successfully logged in</span>
+            </div>
+        </div>
+
+        <!-- Logout Button -->
+        <a href="/logout" class="logout-btn inline-flex items-center gap-2">
+            <i data-lucide="log-out" class="w-4 h-4"></i>
+            Logout
+        </a>
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Generate Particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            particlesContainer.appendChild(particle);
+        }
+
+        // Add floating particles on mouse move
+        document.addEventListener('mousemove', (e) => {
+            if (Math.random() > 0.95) {
+                createParticle(e.clientX, e.clientY);
+            }
+        });
+
+        function createParticle(x, y) {
+            const particle = document.createElement('div');
+            particle.style.position = 'fixed';
+            particle.style.left = x + 'px';
+            particle.style.top = y + 'px';
+            particle.style.width = '4px';
+            particle.style.height = '4px';
+            particle.style.background = 'rgba(0, 210, 255, 0.8)';
+            particle.style.borderRadius = '50%';
+            particle.style.pointerEvents = 'none';
+            particle.style.zIndex = '9999';
+            particle.style.boxShadow = '0 0 10px rgba(0, 210, 255, 0.8)';
+            document.body.appendChild(particle);
+
+            const angle = Math.random() * Math.PI * 2;
+            const velocity = Math.random() * 100 + 50;
+            const lifetime = Math.random() * 1000 + 500;
+
+            let opacity = 1;
+            let currentX = x;
+            let currentY = y;
+
+            const startTime = Date.now();
+
+            function animate() {
+                const elapsed = Date.now() - startTime;
+                const progress = elapsed / lifetime;
+
+                if (progress < 1) {
+                    currentX += Math.cos(angle) * velocity * 0.02;
+                    currentY += Math.sin(angle) * velocity * 0.02;
+                    opacity = 1 - progress;
+
+                    particle.style.left = currentX + 'px';
+                    particle.style.top = currentY + 'px';
+                    particle.style.opacity = opacity;
+
+                    requestAnimationFrame(animate);
+                } else {
+                    particle.remove();
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        // Add ripple effect on click
+        document.addEventListener('click', (e) => {
+            const ripple = document.createElement('div');
+            ripple.style.position = 'fixed';
+            ripple.style.left = e.clientX + 'px';
+            ripple.style.top = e.clientY + 'px';
+            ripple.style.width = '0px';
+            ripple.style.height = '0px';
+            ripple.style.border = '2px solid rgba(0, 210, 255, 0.5)';
+            ripple.style.borderRadius = '50%';
+            ripple.style.transform = 'translate(-50%, -50%)';
+            ripple.style.pointerEvents = 'none';
+            ripple.style.zIndex = '9999';
+            document.body.appendChild(ripple);
+
+            let size = 0;
+            let opacity = 1;
+
+            function animateRipple() {
+                size += 5;
+                opacity -= 0.02;
+
+                ripple.style.width = size + 'px';
+                ripple.style.height = size + 'px';
+                ripple.style.opacity = opacity;
+
+                if (opacity > 0) {
+                    requestAnimationFrame(animateRipple);
+                } else {
+                    ripple.remove();
+                }
+            }
+
+            requestAnimationFrame(animateRipple);
+        });
+    </script>
+</body>
+
+</html>
