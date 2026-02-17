@@ -251,6 +251,4 @@ def github_callback():
         flash(f'GitHub login failed: {str(e)}', 'error')
         return redirect('/login')
 
-if __name__ == '__main__':
-    app.run(debug=True)
 
